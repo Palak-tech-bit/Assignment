@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int i,j,l,b;
+    cout<<"Enter the length and breadth of box";
+    cin>>l>>b;
+    for(i=0;i<l;i++)
+    {
+        for(j=0;j<b;j++)
+        {
+            if(i==0||i==l-1||j==0||j==b-1)
+                cout<<"*";
+            else
+                cout<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
