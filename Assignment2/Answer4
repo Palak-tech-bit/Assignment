@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+class Rectangle
+{
+    float length=1;
+    float width=1;
+public:
+    int Perimeter()
+    {
+        float result;
+        result=2*(length+width);
+        cout<<"The perimeter is:"<<result;
+        return 0;
+    }
+    int Area()
+    {
+        float area;
+        area=length*width;
+        cout<<"\n The area is:"<<area;
+        return 0;
+    }
+    int set()
+    {
+        float a;
+        cout<<"Enter the length";
+        cin>>a;
+        if(a>0.0&&a<20.0)
+            length=a;
+            return 0;
+    }
+    int get()
+    {
+        float b;
+        cout<<"Enter the width";
+        cin>>b;
+        if(b>0.0&&b<20.0)
+            width=b;
+        return 0;
+    }
+
+
+};
+
+
+int main()
+{
+    Rectangle ob;
+    ob.set();
+    ob.get();
+    ob.Perimeter();
+    ob.Area();
+
+}
