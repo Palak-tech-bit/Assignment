@@ -1,0 +1,57 @@
+#include<iostream>
+using namespace std;
+
+void oval(int r, int c) {
+	int maxr = r / 2;
+	maxr = r - maxr;
+	int maxc = c / 2;
+	int firstblock  = c - maxc - maxc / 2 - 1;//to find 1st block in 1st row where we should start priting the patter gt
+	int lastblock = firstblock + maxc - 1;
+	int firstleft = r - maxr - maxr / 2 ;//to find the 1st block colum wise to print * gt
+	int lastleft = firstleft + maxr - 1;
+	int binod1 = firstblock - 1;
+	int binod2 = lastblock + 1;
+
+	for (int i = 0; i < r; i++)
+	{
+		for (int j = 0; j < c; j++)
+		{
+			if (i == 0 || i == r - 1)
+			{if (j >= firstblock && j <= lastblock)
+				{
+					cout << "*";
+				} else {
+					cout << " ";
+				}
+			} else if (i == 1 || i == r - 2)
+			{
+				if ( j == binod2 || j == binod1)
+				{
+					cout << "*";
+				} else {
+					cout << " ";
+				}
+			} else {
+				if (i >= firstleft && i <= lastleft)
+				{
+					if (j == 0 || j == c - 1)
+					{
+						cout << "*";
+					} else {
+						cout << " ";
+					}
+				}
+            }
+		}
+		cout << "\n";
+	}
+}
+int main()
+{
+    int i,j,x,y;
+    cout<<"Enter the number of rows and column";
+    cin>>x>>y;
+    oval(x,y);
+    return 0;
+
+}
